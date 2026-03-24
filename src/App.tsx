@@ -368,29 +368,19 @@ export default function App() {
                   </div>
               </motion.div>
 
-              <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+              <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                  className="w-full aspect-[4/3] md:aspect-[21/9] rounded-lg overflow-hidden relative group cursor-pointer" 
-                  onClick={() => alert('Showreel playback initiated.')}
-                  data-playable="true"
+                  className="w-full mt-16 md:mt-24 pt-8 flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-8 text-xs md:text-sm font-medium uppercase tracking-widest text-zinc-400 border-t border-zinc-800/50"
               >
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#050505] via-[#050505]/40 to-transparent z-10 pointer-events-none group-hover:opacity-70 transition-opacity duration-700"></div>
-                  
-                  <div className="absolute inset-0 z-20 flex items-center justify-center">
-                      <div className="w-20 h-20 rounded-full border border-zinc-100/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 group-hover:border-[#FF4F00]/50 transition-all duration-500 group-hover:bg-[#FF4F00]/10">
-                          <Play size={32} className="text-zinc-100 ml-1 group-hover:text-[#FF4F00] transition-colors" strokeWidth={1.5} />
-                      </div>
-                  </div>
-                  
-                  {/* To use your own video, replace the videoUrl prop below with your YouTube, Vimeo, or direct .mp4 link */}
-                  <div className="w-full h-full opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-1000 ease-out">
-                      <VideoPlayer 
-                          videoUrl="https://www.youtube.com/watch?v=2Gg6Seob5Mg" 
-                          poster="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=2071&auto=format&fit=crop"
-                      />
-                  </div>
+                  <span>Creative Direction</span>
+                  <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-700"></span>
+                  <span>Directing & Production</span>
+                  <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-700"></span>
+                  <span>Post-Production</span>
+                  <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-700"></span>
+                  <span>Color Grading</span>
               </motion.div>
           </div>
       </header>
