@@ -132,47 +132,19 @@ input:-webkit-autofill:active {
   transition: opacity 300ms ease-in-out;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   FILM GRAIN
-───────────────────────────────────────────────────────────── */
-@keyframes grain {
-  0%,  100% { transform: translate(0,    0   ); }
-  10%       { transform: translate(-5%,  -10%); }
-  20%       { transform: translate(-15%, 5%  ); }
-  30%       { transform: translate(7%,   -15%); }
-  40%       { transform: translate(-5%,  15% ); }
-  50%       { transform: translate(-10%, 8%  ); }
-  60%       { transform: translate(12%,  0%  ); }
-  70%       { transform: translate(0%,   12% ); }
-  80%       { transform: translate(3%,   20% ); }
-  90%       { transform: translate(-8%,  8%  ); }
-}
 
-.film-grain {
+
+/* ─────────────────────────────────────────────────────────────
+   UNICORN STUDIO BACKGROUND
+───────────────────────────────────────────────────────────── */
+#bg-unicorn {
   position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-  opacity: 0.045;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
   pointer-events: none;
-  animation: grain 3s steps(6) infinite;
-  z-index: 9999;
-  mix-blend-mode: screen;
-  will-change: transform;
-}
-
-/* ─────────────────────────────────────────────────────────────
-   CUSTOM CURSOR
-───────────────────────────────────────────────────────────── */
-@media (pointer: fine) {
-  body.custom-cursor-enabled,
-  body.custom-cursor-enabled * {
-    cursor: none !important;
-  }
 }
 
 /* ─────────────────────────────────────────────────────────────

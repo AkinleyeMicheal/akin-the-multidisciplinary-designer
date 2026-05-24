@@ -4,7 +4,7 @@
 // Interface Segregation: receives only what it needs.
 // ─────────────────────────────────────────────────────────────
 
-import { Play, ArrowLeft, ArrowRight, XCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, XCircle } from 'lucide-react';
 import type { Project, ModalView } from '../../types';
 import { VideoPlayer } from './VideoPlayer';
 
@@ -60,17 +60,23 @@ export function WorkModal({
             <h2 className="text-4xl md:text-6xl font-extralight tracking-tight text-zinc-100 mb-12">All Works</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((proj, idx) => (
-                <div key={proj.id} className="group cursor-pointer" onClick={() => onOpenDetail(idx)}>
+                <div key={proj.id} className="group">
                   <div className="aspect-4/3 rounded-xl overflow-hidden mb-4 bg-zinc-900">
                     <img
                       src={proj.cover} alt={proj.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-100"
                     />
                   </div>
-                  <h3 className="text-2xl font-light tracking-tight text-zinc-100 group-hover:text-[#FF4F00] transition-colors duration-300">
+                  <h3 className="text-2xl font-light tracking-tight text-zinc-100 group-hover:text-[#FF4F00] transition-colors duration-300 mb-1">
                     {proj.title}
                   </h3>
-                  <span className="text-xs text-zinc-500 uppercase tracking-widest">{proj.category}</span>
+                  <span className="text-xs text-zinc-500 uppercase tracking-widest block mb-4">{proj.category}</span>
+                  <button
+                    onClick={() => onOpenDetail(idx)}
+                    className="text-xs uppercase tracking-widest text-zinc-100 border border-zinc-700 px-4 py-2 rounded-full hover:bg-[#FF4F00] hover:border-[#FF4F00] hover:text-white transition-all duration-300 focus:outline-none cursor-pointer"
+                  >
+                    View Details
+                  </button>
                 </div>
               ))}
             </div>
@@ -92,7 +98,7 @@ export function WorkModal({
             </div>
 
             {/* Video or cover image */}
-            <div className="w-full aspect-video bg-zinc-900 rounded-xl overflow-hidden relative mb-12 group cursor-pointer">
+            <div className="w-full aspect-[21/9] md:aspect-[3/1] bg-zinc-900 rounded-xl overflow-hidden relative mb-12 group">
               {current.videoUrl ? (
                 // Inside WorkModal, in the detail view where the video is rendered:
                 <VideoPlayer
@@ -105,14 +111,7 @@ export function WorkModal({
                     className="w-full h-full object-contain"
                 />
               ) : (
-                <>
-                  <img src={current.cover} alt="Project Cover" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-transparent transition-colors duration-500 pointer-events-none">
-                    <div className="w-16 h-16 rounded-full border border-zinc-100/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 group-hover:border-[#FF4F00] transition-all duration-500">
-                      <Play size={24} className="text-zinc-100 ml-1 group-hover:text-[#FF4F00] transition-colors duration-500" strokeWidth={1.5} />
-                    </div>
-                  </div>
-                </>
+                <img src={current.cover} alt="Project Cover" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               )}
             </div>
 

@@ -3,40 +3,31 @@ import { motion, useMotionValue, useSpring, animate } from 'framer-motion';
 
 const GALLERY_IMAGES = [
   {
-    src: 'https://images.unsplash.com/photo-1603218734550-be7fcffeb817?w=1600&q=80',
-    alt: 'On Set Lighting',
-    label: 'Set Design',
+    src: '/images/emma-brand-works/3riumf/3riumf (3).png',
+    alt: 'logo design',
+    label: 'Logo Design',
   },
   {
-    src: 'https://images.unsplash.com/photo-1500210600724-bc53c16a560c?w=1600&q=80',
-    alt: 'Behind The Camera',
-    label: 'Direction',
+    src: 'images/emma-brand-works/abby-couture/abby-couture-img (1).png',
+    alt: 'brand design',
+    label: 'Brand Design',
   },
   {
-    src: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1600&q=80',
-    alt: 'Film Production',
-    label: 'Production',
+    src: 'images/emma-brand-works/christ-connect/christ-connect-img (3).png',
+    alt: 'mockups',
+    label: 'Mockups',
   },
   {
-    src: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1600&q=80',
-    alt: 'Colour Grading',
-    label: 'Post',
+    src: 'images/emma-brand-works/sMMs/smms-design-img (4).png',
+    alt: 'Social Media Marketing',
+    label: 'Social Media Marketing',
   },
   {
-    src: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=1600&q=80',
-    alt: 'Studio Shoot',
-    label: 'Studio',
+    src: '/images/emma-brand-works/iDiploy/iDiploy-img (6).png',
+    alt: 'website design',
+    label: 'No-Code Web Design',
   },
-  {
-    src: 'https://images.unsplash.com/photo-1536240478700-b869ad10e2b0?w=1600&q=80',
-    alt: 'Location Scout',
-    label: 'Location',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1574717024453-354056aafa98?w=1600&q=80',
-    alt: 'Cinematography',
-    label: 'Lens',
-  },
+
 ];
 
 // Gap between images in px

@@ -1,40 +1,60 @@
 // ─────────────────────────────────────────────────────────────
-// HeroContent — text layer that sits above the hero background.
-// Single Responsibility: renders only the hero text + CTA.
+// HeroContent — text layer + profile picture for the hero.
+// Single Responsibility: renders only the hero text + CTA + image.
 // ─────────────────────────────────────────────────────────────
 
 import { motion } from 'motion/react';
-import { PlayCircle } from 'lucide-react';
 import { GlitchText } from './GlitchText';
 
 export function HeroContent() {
   return (
     <div className="relative z-10 max-w-400 mx-auto w-full flex flex-col items-center">
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-        className="text-6xl md:text-8xl lg:text-9xl font-extralight tracking-tighter text-zinc-100 mb-8 text-center leading-none"
-      >
-        <GlitchText text="Ezekiel Anefiok" delay={0.3} />
-        <span className="text-[#FF4F00]">.</span>
-      </motion.h1>
+      {/* Profile picture + Name — responsive layout */}
+      <div className="w-full flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-16 mb-8">
+        {/* Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="shrink-0"
+        >
+          <div className="w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border-2 border-zinc-700/50 shadow-2xl">
+            <img
+              src="/images/emma-profile-pic.jpg"
+              alt="Emmanuel Akinleye"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
 
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-tighter text-zinc-100 text-center lg:text-left leading-none"
+        >
+          <GlitchText text="Emmanuel Akinleye" delay={0.3} />
+          <span className="text-[#FF4F00]">.</span>
+        </motion.h1>
+      </div>
+
+      {/* Meta row */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
         className="w-full flex flex-col md:flex-row justify-between items-start md:items-end text-xs uppercase tracking-widest text-zinc-500 mb-12 gap-4"
       >
-        <div>
-          <p className="text-zinc-300 mb-1">Baggiez</p>
-          <p>Creative Director</p>
+        <div className='hidden md:block'>
+          <p className="text-zinc-300 mb-1">AKIN</p>
+          <p>MULTIDISCIPLINARY DESIGNER</p>
         </div>
         <div className="hidden md:block text-center">
-          <p className="text-zinc-300 mb-1">Film &amp; Visual Arts</p>
-          <p>London — Lagos</p>
+          <p className="text-zinc-300 mb-1">BRAND &amp; LOGO DESIGNER</p>
+          <p>NIGERIA — Lagos</p>
         </div>
-        <div className="text-right flex flex-col items-end gap-2">
+        <div className="text-right flex flex-col items-end gap-2 hidden md:block">
           <div className="flex items-center gap-4">
             <a
               href="#work"
@@ -42,31 +62,25 @@ export function HeroContent() {
             >
               View Work
             </a>
-            <button
-              onClick={() => alert('Showreel video integration coming soon.')}
-              className="flex items-center gap-1 hover:text-[#FF4F00] transition-colors duration-300"
-            >
-              <PlayCircle size={16} strokeWidth={1.5} />
-              Showreel
-            </button>
           </div>
         </div>
       </motion.div>
 
+      {/* Discipline strip */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
-        className="w-full mt-16 md:mt-24 pt-8 flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-8 text-xs md:text-sm font-medium uppercase tracking-widest text-zinc-400 border-t border-zinc-800/50"
+        className="w-full sm:mt-16 md:mt-24 pt-8 flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-8 text-xs md:text-sm font-medium uppercase tracking-widest text-zinc-400 border-t border-zinc-800/50"
       >
-        {['Creative Direction', 'Directing & Production', 'Post-Production', 'Color Grading'].map(
+        {['Brand Designer', 'Social Media Marketer', 'No-code Website Designer', 'Resume Writer'].map(
           (label, idx, arr) => (
-            <>
-              <span key={label}>{label}</span>
+            <span key={label}>
+              {label}
               {idx < arr.length - 1 && (
-                <span key={`dot-${idx}`} className="hidden md:block w-1 h-1 rounded-full bg-[#ff4f00]" />
+                <span className="hidden md:inline ml-4 md:ml-8 w-1 h-1 rounded-full bg-[#ff4f00] inline-block" />
               )}
-            </>
+            </span>
           )
         )}
       </motion.div>

@@ -28,8 +28,8 @@ export function ContactForm() {
           {
             label: 'Email',
             content: (
-              <a href="mailto:director@baggiez.com" className="text-sm text-zinc-400 hover:text-[#FF4F00] transition-colorstext-right flex items-center gap-2">
-                director@baggiez.com <ArrowUpRight size={14} />
+              <a href="mailto:emmanuelakinleye67@gmail.com" className="text-sm text-zinc-400 hover:text-[#FF4F00] transition-colorstext-right flex items-center gap-2">
+                emmanuelakinleye67@gmail.com <ArrowUpRight size={14} />
               </a>
             ),
           },
@@ -37,16 +37,16 @@ export function ContactForm() {
             label: 'Representation',
             content: (
               <div className="text-sm text-zinc-400 text-right flex flex-col">
-                <span>WME Agency</span>
-                <span className="text-xs text-zinc-600 mt-1">Commercial / Music</span>
+                <span>Freelance</span>
+                <span className="text-xs text-zinc-600 mt-1">Remote/Hybrid</span>
               </div>
             ),
           },
           {
-            label: 'Instagram',
+            label: 'X (formerly Twitter)',
             content: (
               <a href="#" className="text-sm text-zinc-400 hover:text-[#FF4F00] transition-colors text-right flex items-center gap-2">
-                @baggiez.dir <ArrowUpRight size={14} />
+                @mira_akins <ArrowUpRight size={14} />
               </a>
             ),
           },
@@ -81,10 +81,12 @@ export function ContactForm() {
             onChange={e => update('type', e.target.value)}
             className="w-full appearance-none bg-transparent border-b border-zinc-800 py-4 text-zinc-100 focus:border-[#FF4F00] focus:outline-none transition-colors duration-300 rounded-none text-sm cursor-pointer"
           >
-            <option value="" disabled className="bg-zinc-950 text-zinc-500">Project Type</option>
-            <option value="music-video"  className="bg-zinc-950">Music Video</option>
-            <option value="commercial"   className="bg-zinc-950">Commercial / Brand</option>
-            <option value="short-film"   className="bg-zinc-950">Short Film</option>
+            <option value="" disabled className="bg-zinc-950 text-zinc-500">Brand Design</option>
+            <option value="music-video"  className="bg-zinc-950">Logo Design</option>
+            <option value="commercial"   className="bg-zinc-950">Web Design</option>
+            <option value="short-film"   className="bg-zinc-950">Social Media Marketing</option>
+            <option value="short-film"   className="bg-zinc-950">SEO marketing Strategy</option>
+            <option value="short-film"   className="bg-zinc-950">Resume Writing</option>
             <option value="other"        className="bg-zinc-950">Other</option>
           </select>
           <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none text-zinc-500">
