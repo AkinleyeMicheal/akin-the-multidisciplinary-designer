@@ -20,7 +20,7 @@ export function HeroContent() {
         >
           <div className="w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border-2 border-zinc-700/50 shadow-2xl">
             <img
-              src="/images/emma-profile-pic.jpg"
+              src="/images/IMG-20260525-WA0002.jpg"
               alt="Emmanuel Akinleye"
               className="w-full h-full object-cover"
             />
