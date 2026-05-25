@@ -449,19 +449,19 @@ export const TOOLS: ToolItem[] = [
 export const CERTIFICATIONS: CertificationItem[] = [
   {
     title: 'Certified Resume Writer',
-    issuer: 'Shea Hanson',
+    issuer: 'Shea Hanson | LinkedIn Learning',
     year: '2026',
     credentialUrl: 'https://drive.google.com/file/d/14ebkFtBoDYeWgZyuEC66yvRctZobgHO0/view?usp=sharing',
   },
   {
     title: 'Website SEO Strategist',
-    issuer: 'Shea Hanson',
+    issuer: 'Shea Hanson | LinkedIn Learning',
     year: '2026',
     credentialUrl: 'https://drive.google.com/file/d/1WaCTaJYlwunHmeaSfIZy7SWhZfDyWYfy/view?usp=sharing',
   },
   {
     title: 'Social Media Marketer',
-    issuer: 'Yamini Rangan',
+    issuer: 'Yamini Rangan | LinkedIn Learning',
     year: '2026',
     credentialUrl: 'https://drive.google.com/file/d/12Yzu_XHAj5s7AD9d5lVz9IcqkUekFs9m/view?usp=sharing',
   },
